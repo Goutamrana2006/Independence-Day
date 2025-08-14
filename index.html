@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Independence Day</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e3f2fd, #fff);
+      color: #1b1b1b;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    /* FLOWING FLAG ANIMATION */
+    @keyframes wave {
+      0% { transform: rotateZ(0deg) scale(1.05); }
+      50% { transform: rotateZ(1deg) scale(1.1); }
+      100% { transform: rotateZ(0deg) scale(1.05); }
+    }
+
+    /* FLOWER FALLING ANIMATION */
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .flower {
+      position: fixed;
+      top: -50px;
+      font-size: 24px;
+      animation: fall linear infinite;
+      pointer-events: none;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      color: #0d47a1;
+      margin-bottom: 10px;
+    }
+
+    header img {
+      width: 250px;
+      height: auto;
+      border-radius: 10px;
+      animation: wave 2s infinite;
+    }
+
+    .verse-block {
+      text-align: center;
+      background: #ffffff;
+      padding: 15px;
+      margin: 15px auto;
+      max-width: 800px;
+      border-left: 5px solid #ff6f00;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .container h2 {
+      color: #1a237e;
+      margin-bottom: 20px;
+    }
+
+    form input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 2px solid #1a237e;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    form button {
+      width: 100%;
+      padding: 12px;
+      background-color: #1a237e;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    form button:hover {
+      background-color: #0d1333;
+    }
+
+    .certificate {
+      margin-top: 30px;
+      padding: 20px;
+      background: linear-gradient(to bottom, #FF9933 0%, #FFFFFF 50%, #138808 100%);
+      border: 2px solid #000;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      display: none;
+      position: relative;
+    }
+
+    .certificate-content {
+      background-color: rgba(255, 255, 255, 0.88);
+      padding: 20px;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    #displayName {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 10px 0;
+      color: #b71c1c;
+    }
+
+    #creator-signature {
+      position: absolute;
+      bottom: 15px;
+      right: 20px;
+      font-style: italic;
+      color: #333;
+      font-size: 14px;
+    }
+
+    #downloadBtn {
+      margin-top: 20px;
+      background-color: #2e7d32;
+      color: white;
+      padding: 10px 20px;
+      font-size: 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #downloadBtn:hover {
+      background-color: #1b5e20;
+    }
+
+    @media (max-width: 600px) {
+      .verse-block {
+        font-size: 14px;
+      }
+      .certificate-content {
+        font-size: 14px;
+      }
+      #displayName {
+        font-size: 20px;
+      }
+      #creator-signature {
+        font-size: 12px;
+        right: 10px;
+        bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Animated Flower Emoji Generator -->
+  <script>
+    const flowers = ['🌸', '🌺','🧡', '🌼', '💮','🌻','🪷','💚','🪻','🥀','🤍'];
+    setInterval(() => {
+      const flower = document.createElement('div');
+      flower.className = 'flower';
+      flower.style.left = Math.random() * window.innerWidth + 'px';
+      flower.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+      document.body.appendChild(flower);
+
+      setTimeout(() => {
+        flower.remove();
+      }, 5000);
+    }, 300);
+  </script>
+
+  <header>
+    <h1>!! Welcome to Independence Day !!</h1>
+    <img src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-indian-flag-republic-day-independence-day-vector-png-image_4248605.jpg" alt="Indian Flag">
+  </header>
+
+  <div class="verse-block">
+    <strong>National Anthem (जन गण मन):</strong><br><br>
+    Jana-gana-mana-adhinayaka, jaya he<br>
+    Bharata-bhagya-vidhata.<br>
+    Punjab-Sindh-Gujarat-Maratha<br>
+    Dravida-Utkala-Banga<br>
+    Vindhya-Himachala-Yamuna-Ganga<br>
+    Uchchala-Jaladhi-taranga.<br>
+    Tava shubha name jage,<br>
+    Tava shubha asisa mage,<br>
+    Gahe tava jaya gatha,<br>
+    Jana-gana-mangala-dayaka jaya he<br>
+    Bharata-bhagya-vidhata.<br>
+    Jaya he, jaya he, jaya he,<br>
+    Jaya jaya jaya, jaya he!
+  </div>
+
+  <div class="verse-block">
+    मुझे तन चाहिए ना धन चाहिए,<br>
+    बस अमन से भरा यह वतन चाहिए,<br>
+    जब तक जिंदा हूं मातृभूमि के लिए,<br>
+    और जब मरू तो तिरंगा कफन चाहिए।<br>
+    देशभक्तों से ही देश की शान है,<br>
+    देशभक्तों से ही देश का मान है,<br>
+    हम उस देश के फूल हैं यारों,<br>
+    जिस देश का नाम हिंदुस्तान है।</br>
+  <b> 🧡Jai Hind🤍Jai Bharat💚</b>
+  </div>
+</table>
+</form>
+</div>
+</center>
+  <div class="container">
+    <h2>Enter Your Name and get Certificate</h2>
+    <form id="certificateForm">
+      <input type="text" id="studentName" placeholder="Enter your full name" required />
+      <button type="submit">Generate Certificate</button>
+    </form>
+
+    <div class="certificate" id="certificate">
+      <div class="certificate-content" id="certificateContent">
+        <h2>🎗🎉Congratulations🎉🎗</h2>
+        <h2>🎖 Certificate of Honor 🎖</h2>
+        <p>This certificate is proudly presented to</p>
+        <h3 id="displayName"></h3>
+        <p>This is to certify that the participant enthusiastically participated in the <b>79<sup>th</sup></b> Independence Day celebration and contributed to making it a grand success.</p>
+        <h4>We appreciate your participation in honoring our nation</h4>
+        <p>15th August 2025</p>
+        <div id="creator-signature">
+          <i>Mr.&nbsp;Goutam Rana</i><br>
+          <b>Signature of Creator</b>
+        </div>
+      </div>
+      <button id="downloadBtn">Download Certificate</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script>
+    document.getElementById("certificateForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const nameInput = document.getElementById("studentName").value.trim();
+      if (nameInput === "") return;
+      document.getElementById("displayName").textContent = nameInput;
+      document.getElementById("certificate").style.display = "block";
+    });
+
+    document.getElementById("downloadBtn").addEventListener("click", function () {
+      const btn = document.getElementById("downloadBtn");
+      const certificate = document.getElementById("certificate");
+
+      btn.style.display = "none";
+      html2canvas(certificate).then(canvas => {
+        const link = document.createElement("a");
+        link.download = "Independence_Day_Certificate.png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+        btn.style.display = "block";
+      });
+    });
+  </script>
+
+  <center>
+    &copy; Tribute to Independence Day 🧡🤍💚 created by Goutam Rana
+  </center>
+</body>
+</html>
